@@ -2,11 +2,14 @@ package com.selfstudy.services;
 
 public class CoronaDisinfector {
 
+    private Announcer announcer;
+    private Policeman policeman;
+
     public void start(Room room) {
-        // todo: Notify that all have to leave the room
-        // todo: Disperse anyone who hasn't come out
+        announcer.announce("Disinfection is starting! Everybody out!");
+        policeman.makePeopleLeave();
         disinfect(room);
-        // todo: Notify that can return
+        announcer.announce("Take the risk of entering the room!");
     }
 
     private void disinfect(Room room) {
