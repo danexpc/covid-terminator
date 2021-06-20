@@ -2,11 +2,16 @@ package com.selfstudy.services;
 
 import lombok.SneakyThrows;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ObjectFactory {
     private static final ObjectFactory instance = new ObjectFactory();
-    private Config config = new JavaConfig("com.selfstudy");
+    private Config config;
 
-    private ObjectFactory() {}
+    private ObjectFactory() {
+        config = new JavaConfig("com.selfstudy", new HashMap<>(Map.of(Policeman.class, AngryPoliceman.class)));
+    }
 
     public static ObjectFactory getInstance() {
         return instance;
