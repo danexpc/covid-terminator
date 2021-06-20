@@ -2,8 +2,8 @@ package com.selfstudy.services;
 
 public class CoronaDisinfector {
 
-    private Announcer announcer;
-    private Policeman policeman;
+    private Announcer announcer = new ConsoleAnnouncer();
+    private Policeman policeman = new PolicemanImpl();
 
     public void start(Room room) {
         announcer.announce("Disinfection is starting! Everybody out!");
